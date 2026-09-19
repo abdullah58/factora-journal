@@ -1,48 +1,39 @@
 # factora Journal
 
-One-page landing page for **factora Journal** — "How we know what we know."
-Static HTML + CSS + tiny JS. Links out to [factsledger.com](https://factsledger.com)
-as a sister publication.
+A static evidence journal about **how we know what we know**. The site publishes ten individual investigations, an Articles index, About Us, legal pages, and Contact information.
 
 ## Preview locally
 
 ```bash
-cd factora-journal
 python3 -m http.server 8080
 # open http://localhost:8080
 ```
 
-## Push to GitHub
+## Site routes
 
-```bash
-cd factora-journal
-git init
-git add .
-git commit -m "factora Journal landing page"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/factora-journal.git
-git push -u origin main
-```
+- `/index.html` — homepage
+- `/posts/index.html` — Articles index
+- `/posts/*.html` — ten individual investigations
+- `/about.html` — About Us and Emilio Lopez’s biography
+- `/privacy-policy.html` — Privacy Policy
+- `/terms.html` — Terms and Conditions
+- `/cookie-policy.html` — Cookie Policy
+- `/editorial-policy.html` — Editorial Policy
+- `/contact.html` — Contact, corrections, and story tips
 
 ## Deploy to Vercel
 
-1. Sign in at [vercel.com](https://vercel.com) with GitHub.
-2. **Add New → Project** → select the `factora-journal` repository.
-3. Framework preset: **Other**. No build command needed.
-4. **Deploy** — `index.html` is served automatically.
+The repository is linked to Vercel and deploys from the `main` branch. For a new Vercel project, import this GitHub repository, use the **Other** framework preset, and leave the build command empty. `index.html` is served automatically.
 
-## Files
+## Content
 
-| File | Purpose |
-|---|---|
-| `index.html` | The landing page (semantic HTML, SEO + OG meta included) |
-| `styles.css` | All styling, responsive down to mobile |
-| `script.js` | Newsletter form validation + footer year |
-| `vercel.json` | Static hosting config + security headers |
+The source Word documents are retained in `content/`. Each article page includes its evidence note and two contextual links to related records on FactsLedger. FactsLedger links have intentionally been removed from the homepage for now.
 
-## Before launch checklist
+The legal pages are editorial templates supplied for the site. They contain placeholders such as `[CONTACT EMAIL]`, `[NEWSLETTER PROVIDER]`, and `[JURISDICTION]`; replace those values and obtain qualified legal review before treating them as final legal notices.
 
-- [ ] Wire the newsletter form to a real provider (Buttondown, ConvertKit, …)
-- [ ] If you use a custom domain, update `canonical` / `og:url` in `index.html`
-- [ ] Decide the canonical domain vs. factsledger.com (see duplicate-content notes):
-  add a `canonical` tag or `noindex` while the deployment is staging
+## Before launch
+
+- Wire the newsletter form to a real provider.
+- Replace all bracketed legal placeholders.
+- Have the legal pages reviewed by a qualified attorney in the applicable jurisdiction.
+- Update canonical and Open Graph URLs when the production domain is finalized.
