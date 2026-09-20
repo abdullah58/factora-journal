@@ -1,39 +1,45 @@
 # factora Journal
 
-A static evidence journal about **how we know what we know**. The site publishes ten individual investigations, an Articles index, About Us, legal pages, and Contact information.
+One-page landing page for **factora Journal** — "How we know what we know."Static HTML + CSS + tiny JS.
 
 ## Preview locally
 
 ```bash
+cd factora-journal
 python3 -m http.server 8080
 # open http://localhost:8080
 ```
 
-## Site routes
+## Push to GitHub
 
-- `/index.html` — homepage
-- `/posts/index.html` — Articles index
-- `/posts/*.html` — ten individual investigations
-- `/about.html` — About Us and Emilio Lopez’s biography
-- `/privacy-policy.html` — Privacy Policy
-- `/terms.html` — Terms and Conditions
-- `/cookie-policy.html` — Cookie Policy
-- `/editorial-policy.html` — Editorial Policy
-- `/contact.html` — Contact, corrections, and story tips
+```bash
+cd factora-journal
+git init
+git add .
+git commit -m "factora Journal landing page"
+git branch -M main
+git remote add origin https://github.com/YOUR-USERNAME/factora-journal.git
+git push -u origin main
+```
 
 ## Deploy to Vercel
 
-The repository is linked to Vercel and deploys from the `main` branch. For a new Vercel project, import this GitHub repository, use the **Other** framework preset, and leave the build command empty. `index.html` is served automatically.
+1. Sign in at [vercel.com](https://vercel.com) with GitHub.
+2. **Add New → Project** → select the `factora-journal` repository.
+3. Framework preset: **Other**. No build command needed.
+4. **Deploy** — `index.html` is served automatically.
 
-## Content
+## Files
 
-The source Word documents are retained in `content/`. Each article page includes its evidence note and dedicated source citations. External FactsLedger links have been removed from the published site.
+| File | Purpose |
+|---|---|
+| `index.html` | The landing page (semantic HTML, SEO + OG meta included) |
+| `styles.css` | All styling, responsive down to mobile |
+| `script.js` | Newsletter form validation + footer year |
+| `vercel.json` | Static hosting config + security headers |
 
-The legal pages are editorial templates supplied for the site. They contain placeholders such as `[CONTACT EMAIL]`, `[NEWSLETTER PROVIDER]`, and `[JURISDICTION]`; replace those values and obtain qualified legal review before treating them as final legal notices.
+## Before launch checklist
 
-## Before launch
-
-- Wire the newsletter form to a real provider.
-- Replace all bracketed legal placeholders.
-- Have the legal pages reviewed by a qualified attorney in the applicable jurisdiction.
-- Update canonical and Open Graph URLs when the production domain is finalized.
+- [ ] Wire the newsletter form to a real provider (Buttondown, ConvertKit, …)
+- [ ] If you use a custom domain, update `canonical` / `og:url` in `index.html`
+  add a `canonical` tag or `noindex` while the deployment is staging
