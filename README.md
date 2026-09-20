@@ -1,6 +1,8 @@
 # factora Journal
 
-One-page landing page for **factora Journal** — "How we know what we know."Static HTML + CSS + tiny JS.
+One-page landing page for **factora Journal** — "How we know what we know."
+Static HTML + CSS + tiny JS. Links out to [factsledger.com](https://factsledger.com)
+as a sister publication.
 
 ## Preview locally
 
@@ -42,4 +44,5 @@ git push -u origin main
 
 - [ ] Wire the newsletter form to a real provider (Buttondown, ConvertKit, …)
 - [ ] If you use a custom domain, update `canonical` / `og:url` in `index.html`
+- [ ] Decide the canonical domain vs. factsledger.com (see duplicate-content notes):
   add a `canonical` tag or `noindex` while the deployment is staging
