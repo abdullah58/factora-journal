@@ -27,7 +27,7 @@ The repository is linked to Vercel and deploys from the `main` branch. For a new
 
 ## Content
 
-The source Word documents are retained in `content/`. Each article page includes its evidence note and two contextual links to related records on FactsLedger. FactsLedger links have intentionally been removed from the homepage for now.
+The source Word documents are retained in `content/`. Each article page includes its evidence note and dedicated source citations. External FactsLedger links have been removed from the published site.
 
 The legal pages are editorial templates supplied for the site. They contain placeholders such as `[CONTACT EMAIL]`, `[NEWSLETTER PROVIDER]`, and `[JURISDICTION]`; replace those values and obtain qualified legal review before treating them as final legal notices.
 
